@@ -10,15 +10,19 @@
     <title>Inicio de Sesion</title>
 </head>
 <body>
+    <center>
+
+    <h1>Inicio de Sesion</h1>
+    
     <form method="post">
         <tr>
             <td>Usuario</td>
             <td><input type="text" name="userBox" value="" size="10"></td>
-            </tr>
+            <br>
             <td>Contraseña</td>
             <td><input type="password" name="passwordBox" value="" size="10">
             </td>
-            
+
         </tr>
     </form>
     
