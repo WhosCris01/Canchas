@@ -18,6 +18,7 @@
             <td>Contraseña</td>
             <td><input type="password" name="passwordBox" value="" size="10">
             </td>
+            
         </tr>
     </form>
     
