@@ -26,7 +26,7 @@
             </td>
         </tr>
         <br>
-        <input class="button" type="button" name="btnLogin" value="Ingresar">
+        <input class="button" type="submit" name="btnLogin" value="Ingresar" onclick="logear()">
         </div>
     </form>
     
