@@ -15,6 +15,7 @@
     <h1>Inicio de Sesion</h1>
     
     <form method="post">
+        <div>
         <tr>
             <td>Usuario</td>
             <td><input type="text" name="userBox" value="" size="10"></td>
@@ -23,6 +24,7 @@
             <td><input type="password" name="passwordBox" value="" size="10">
             </td>
         </tr>
+        </div>
     </form>
     
 </body>
