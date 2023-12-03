@@ -1,7 +1,107 @@
-.h1{
-    color:red;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
+/*STYLES*/ 
+
+*{
+  margin: 0;
+  padding:0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.button{
+body{
+    background: #DCEAED;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('imagen3.webp'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+   
+  }
+
+  .container {
+  
+  background:#E8F5E9;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
     
-}
+  }
+
+  
+  h1{
+    font-family: 'Montserrat','Arial',sans-serif;;
+    color:#33691E;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+    padding: 50px;
+    align-self: center;
+  }
+  
+  /*FORM*/ 
+  
+  form{
+    text-transform: capitalize;
+    font-family:'Lato','Arial',sans-serif;;
+    text-align: center;
+  }
+
+  
+  input{
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid #DAE2F1;
+    padding: 15px 20px;
+    color:#004D40;
+    font-size: .9rem;
+    transition: .4s;
+    margin: 10px; /* Espacio entre los elementos de entrada y el botón */
+    padding: 15px;
+    color: #1a7e47;
+    width: 120px; /* Ajusta el ancho según tus necesidades */
+    height: 3px;
+    
+      &:last-child{
+      margin-bottom: 0;
+    }
+  
+  }
+  
+  [type="submit"]{
+    
+    background:#33691E;
+    border-radius:30px;
+    padding: 20px ;
+    width: 70%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-family: 'Montserrat','Arial',sans-serif;
+    margin: 20;
+    text-align: center;
+    line-height: 1px; 
+      
+  }
+
+  h2{
+    display: inline-block;
+    color: #1a7e47;
+    font-size: .9rem;
+  }
+
+  
+  

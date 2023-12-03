@@ -12,23 +12,27 @@
 </head>
 <body>
     <center>
-
+    <div class="container">
     <h1 class="h1">Inicio de Sesion</h1>
     
     <form method="post">
-        <div>
+        
         <tr>
-            <td>Usuario  </td>
+            <td><h2> Usuario</h2> </td>
             <td><input type="text" name="userBox" value="" size="10"></td>
             <br>
-            <td>Contraseña</td>
+            <td><h2>Contraseña</h2></td>
             <td><input type="password" name="passwordBox" value="" size="10">
             </td>
+
         </tr>
+
         <br>
+
+        <div class="button">
         <input class="button" type="submit" name="btnLogin" value="Ingresar" onclick="logear()">
-        </div>
+        <div>
     </form>
-    
+    </div>
 </body>
 </html>
