@@ -30,7 +30,7 @@
         <br>
 
         <div class="button">
-        <input class="button" type="submit" name="btnLogin" value="Ingresar" onclick="logear()">
+        <input class="button" type="submit" name="btnLogin" value="Ingresar">
         <div>
     </form>
     </div>
