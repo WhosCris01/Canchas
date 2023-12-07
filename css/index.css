@@ -4,14 +4,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 
-/*STYLES*/ 
-
 *{
   margin: 0;
   padding:0;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box; 
 }
 
 body{
@@ -20,9 +16,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('imagen3.webp'); /* Reemplaza con la URL de tu imagen */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
-    background-position: center; /* Centra la imagen */
+    background-image: url('imagen3.webp'); 
+    background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
    
   }
@@ -35,9 +31,9 @@ body{
   width: 100%;
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Alinea los elementos en una columna */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
     
   }
 
@@ -69,10 +65,10 @@ body{
     color:#004D40;
     font-size: .9rem;
     transition: .4s;
-    margin: 10px; /* Espacio entre los elementos de entrada y el botón */
+    margin: 10px; 
     padding: 15px;
     color: #1a7e47;
-    width: 120px; /* Ajusta el ancho según tus necesidades */
+    width: 120px; 
     height: 3px;
     
       &:last-child{
