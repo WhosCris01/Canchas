@@ -6,7 +6,7 @@ function logear() {
     
     if (user === 'usuario' && password === 'contraseña') {
         
-        window.location.href = "menuArriendo.php";
+        window.location.href = "agregarArriendo.php";
         return false;
     } else {
         alert('Usuario o contraseña incorrectos.');
