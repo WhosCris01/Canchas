@@ -116,7 +116,7 @@ if ($result->num_rows > 0) {
                     switch ($_SESSION['Cargo']){
                         case 1:
                             echo "<script>alert('Usted es $_SESSION[Nombre] $_SESSION[Apellido] y es Dueño')</script>";
-                            echo "<script type='text/javascript'>window.location='Tecnico.php'</script>";
+                            echo "<script type='text/javascript'>window.location='menu.php'</script>";
                             break; 
                 }
             }
