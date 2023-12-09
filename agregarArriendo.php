@@ -3,7 +3,7 @@ session_start();
 
 if(! isset($_SESSION['Cargo'])){
     session_destroy();
-    header("Location: Index.php");
+    header("Location: index.php");
 }else{
     $_SESSION['Rut'] = $_SESSION['Rut'];
     echo "El usuario conectado es: ".$_SESSION['Nombre']." ".$_SESSION['Apellido'];
@@ -14,7 +14,7 @@ if(! isset($_SESSION['Cargo'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tecnic</title>
+    <title>agregarArriendo</title>
 
     <!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
@@ -94,28 +94,28 @@ if(! isset($_SESSION['Cargo'])){
 
 	<table>
 		<tr>
-            <td> Rut :</td>
+            <td> Rut cliente :</td>
             <td><input type="text" name="txtRut" value="" size="30" maxlength="30" onkeypress="ValidaSoloNumeros()"></td>
             <td>- <input type="text" name="txtDigito" value="" size="2" onkeypress="ValidaSoloNumeros()"></td>
         </tr>
         <tr>
-            <td>Nombre :</td>
+            <td>* Nombre :</td>
             <td><input type="text" name="txtNom" value="" size="30" maxlength="30" onkeypress="ValidaSoloLetras()"></td>
         </tr>
-            <td>Apellido :</td>
+            <td>* Apellido :</td>
             <td><input type="text" name="txtApe" value="" size="30" maxlength="30" onkeypress="ValidaSoloLetras()"></td>
         </tr>
         </tr>
-            <td>Fecha :</td>
-            <td><input type="text" name="txtDirec" value="" size="30" maxlength="30" ></td>
+            <td>* Fecha arriendo :</td>
+            <td><input type="date" name="txtFech" value="" size="30" maxlength="30" ></td>
         </tr>
     	</tr>
-            <td>Hora :</td>
-            <td><input type="text" name="txtFon" value="" size="30" maxlength="30" onkeypress="ValidaSoloNumeros()"></td>
+            <td>* Hora :</td>
+            <td><input type="time" name="txtHora" value="" size="30" maxlength="30"></td>
         </tr>
         </tr>
-            <td>Estado :</td>
-            <td><input type="text" name="txtCorreo" value="" size="30" maxlength="30"></td>
+            <td>* Estado :</td>
+            <td><input type="text" name="txtEstado" value="" size="30" maxlength="30"></td>
         </tr>
 	</center>
         
@@ -124,7 +124,7 @@ if(! isset($_SESSION['Cargo'])){
         	
         	<center><input type="submit" name="btnAgre" value="AGREGAR" size="25" maxlength="30"></center>
             <br><br>
-			<button type="submit"><a href="menurecepcionista.php">Volver</a></button>
+			<button type="submit"><a href="index.php">Volver</a></button>
 
  <?php 
 
@@ -137,19 +137,20 @@ if ($_POST['btnAgre']=="AGREGAR"){
     $Rut = $_POST['txtRut']."-".$_POST['txtDigito'];
     $nom = $_POST['txtNom'];
     $ape = $_POST['txtApe'];
-    $direc = $_POST['txtDirec'];
-    $fono = $_POST['txtFon'];
-    $correo = $_POST['txtCorreo'];
+    $fech = $_POST['txtFech'];
+    $hora = $_POST['txtHora'];
+    $estado = $_POST['txtEstado'];
     if($_POST['txtDigito']=="k") { $_POST['txtDigito']=="K";}
     if($_POST['txtDigito']==$vaDig){
-       $rs = mysqli_query($cnn,"SELECT * FROM cliente WHERE RUT = '$Rut'");
+       $rs = mysqli_query($cnn,"SELECT * FROM arriendos WHERE RUT = '$Rut'");
        if($row = mysqli_fetch_array($rs)){
         echo "<script>alert('Ya existe un trabajador registrado con ese rut')</script>";
     }else{
-        if(empty($nom) || empty($ape) || empty($direc) || empty($fono) || empty($correo)){
+        if(empty($nom) || empty($ape) || empty($fech) || empty($hora) || empty($estado)){
             echo "<script> alert('Los campos obligatorios deben contener datos')</script>";
         }else{
-            $sql="insert into cliente values('$Rut','$nom','$ape','$direc','$fono','$correo')";
+            $sql="insert into arriendos values('$Rut','$nom','$ape','$fech','$hora','$estado')";
+            echo $sql;
             mysqli_query($cnn,$sql);
             echo "<script> alert('El registro ha sido ingresado correctamente')</script>";
         }

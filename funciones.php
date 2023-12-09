@@ -6,7 +6,7 @@
             die("Error de conexión: " . mysqli_connect_error());
         }
 
-        if (!mysqli_select_db($cnn, "serviciotecnico")) {
+        if (!mysqli_select_db($cnn, "canchas")) {
             die("Error al seleccionar la base de datos: " . mysqli_error($cnn));
         }
 
