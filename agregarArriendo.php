@@ -124,7 +124,7 @@ if(! isset($_SESSION['Cargo'])){
         	
         	<center><input type="submit" name="btnAgre" value="AGREGAR" size="25" maxlength="30"></center>
             <br><br>
-			<button type="submit"><a href="index.php">Volver</a></button>
+			<button type="submit"><a href="menu.php">Volver</a></button>
 
  <?php 
 
@@ -150,7 +150,6 @@ if ($_POST['btnAgre']=="AGREGAR"){
             echo "<script> alert('Los campos obligatorios deben contener datos')</script>";
         }else{
             $sql="insert into arriendos values('$Rut','$nom','$ape','$fech','$hora','$estado')";
-            echo $sql;
             mysqli_query($cnn,$sql);
             echo "<script> alert('El registro ha sido ingresado correctamente')</script>";
         }
