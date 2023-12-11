@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+
 	<!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
 	var RelojID24 = null
@@ -42,25 +45,6 @@
 		MostrarHora24()
 	}
 	</script>
-
-	<!-- VALIDACION DE DATOS INGRESO SOLO LETRAS O SOLO NUMEROS -->
-	<script language="javascript">
-
-	function ValidaSoloNumeros(){
-		if((event.keyCode < 48) || (event.keyCode > 57))
-			event.returnValue = false;
-	}
-
-	function ValidaSoloLetras(){
-		if((event.keyCode != 32) && (event.keyCode < 65) ||
-			(event.keyCode > 90) && (event.keyCode > 97) ||
-			(event.keyCode > 122))
-			event.returnValue = false;
-	}
-	</script>
-
-
-
 </head>
 
 <body onload="IniciarReloj24()">
@@ -81,18 +65,13 @@
 <body bgcolor="04BDC0">
 <form method="post">	
 	<center>
-	<h1>Actualizar Arriendo</h1>
-	<?php error_reporting(0) ?>
-	
-	
-	
-    
+	<h1>Eliminar Arriendo</h1>
+    <?php error_reporting (0) ?> 
 <?php
-include("funciones.php");
-$cnn = Conectar();
 
 if($_POST['btnVer']=="Buscar"){
-    
+    include("funciones.php");
+    $cnn = Conectar();
     $Rut = $_POST['txtRut'];
     $rs = mysqli_query($cnn, "select * from arriendos where rut='$Rut'");
     if($row = mysqli_fetch_array($rs)){
@@ -103,74 +82,67 @@ if($_POST['btnVer']=="Buscar"){
         $estado = $row[5];
     }else{
         echo "<script>alert('no hay datos con ese rut')</script>";
-		
     }
 }
-
-
-if ($_POST['btnActua']=="Actualizar"){
-	
-	 $Rut = $_POST['txtRut'];
-	 $nom = $_POST['txtNom'];
-	 $ape = $_POST['txtApe'];
-     $fecha = $_POST['txtFech'];
-     $hora = $_POST['txtHora'];
-     $estado = $_POST['txtEstado'];
-
-	 $sql="UPDATE arriendos SET Nombre = '$nom', Apellido = '$ape', Fecha = '$fecha',
-           Hora = '$hora', Estado = '$estado' WHERE rut = '$Rut'";
-mysqli_query($cnn,$sql);
-echo "<script>alert('Actualizamos el registro correctamente')</script>";
-
-}
-
-  ?>  
-
-
-    <b><td> Rut :</td></b>
-            <td><input type="text" name="txtRut" value="<?php echo "$Rut" ?>" size="25" maxlength="30" ></td>
+?>
+	<table>
+		<tr>
+            <td> Rut :</td>
+            <td><input type="text" name="txtRut" value="<?php echo "$Rut" ?>" size="25" maxlength="30"></td>
             <td><input type="submit" name="btnVer" value="Buscar" size="25" maxlength="30"></td>
-<br><br><br>
-<table>
-		
+        </tr>
         <tr>
-        
             <td>Nombre :</td>
-            <td><input type="text" name="txtNom" value="<?php echo "$nom" ?>" size="25" maxlength="30" ></td>
-
+            <td><input type="text" name="txtNom" value="<?php echo "$nom" ?>" size="25" maxlength="30" disabled="disabled"></td>
         </tr>
         <tr>
             <td>Apellido :</td>
-            <td><input type="text" name="txtApe" value="<?php echo "$ape"?>" size="25" maxlength="30" ></td>
-            
+            <td><input type="text" name="txtApe" value="<?php echo "$ape"?>" size="25" maxlength="30" disabled="disabled"></td>
         </tr>
         </tr>
             <td>Fecha arriendo :</td>
-            <td><input type="date" name="txtFech" value="<?php echo "$fecha" ?>" size="25" maxlength="30"></td>
-            
+            <td><input type="date" name="dtFnc" value="<?php echo "$fecha" ?>" size="25" maxlength="30" disabled="disabled" ></td>
         </tr>
         <tr>	
             <td>Hora :</td>
             <td><input type="time" name="txtHora" value="<?php echo "$hora" ?>" size="30" maxlength="30"></td>
         </tr>
-		
         <tr>	
             <td>Estado :</td>
             <td><input type="text" name="txtEstado" value="<?php echo "$estado" ?>" size="30" maxlength="30"></td>
         </tr>
+
        
 	</center>
         
-</table> 
-
+     </table> 
      <br><br>  	
         	
-        	<center><input type="submit" name="btnActua" value="Actualizar" size="" maxlength=""></center>
-  			<br><br><br>
+        	<center><input type="submit" name="btnEliminar" value="Eliminar" size="25" maxlength="30"></center>
+  	        <br><br><br>
             <button type="submit"><a href="menu.php">Volver</a></button>
- 
+ <?php 
  
 
+if ($_POST['btnEliminar']=="Eliminar"){
+
+	include("funciones.php");
+	$cnn = Conectar();
+	 $Rut = $_POST['txtRut'];
+	 $nom = $_POST['txtNom'];
+	 $ape = $_POST['txtApe'];
+
+	 $sql="delete from arriendos where(Rut = '$Rut')";
+	
+
+
+mysqli_query($cnn,$sql);
+
+echo "<script>alert('Eliminamos el registro')</script>";
+
+}
+
+  ?>  
 	
 		
 	
