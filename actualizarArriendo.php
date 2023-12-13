@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+<link rel="stylesheet" href="css/ActualizarArriendo.css">
 	<!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
 	var RelojID24 = null
@@ -65,22 +65,23 @@
 
 <body onload="IniciarReloj24()">
     <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
-        <input type="text" size="4" name="txtDigitos" style="background-color:04BDC0;
-		border-color:transparent; text-align:right" value="" disabled>
+        <input class="reloj" type="text" size="4" name="txtDigitos"  value="" disabled>
 
 		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
 	<?php date_default_timezone_set('America/Santiago');
             $vaFecha=date('d-M-Y');
         ?>
-        <input type="text" name="caja_fecha" size="7" style="background-color:04BDC0;
-		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
+        <input class="fecha" type="text" name="caja_fecha" size="7" value="<?php echo $vaFecha; ?>" disabled>
     </form>
 	
 </body>
 
 <body bgcolor="04BDC0">
+
 <form method="post">	
 	<center>
+<div class="container">
+
 	<h1>Actualizar Arriendo</h1>
 	<?php error_reporting(0) ?>
 	
@@ -130,7 +131,7 @@ echo "<script>alert('Actualizamos el registro correctamente')</script>";
     <b><td> Rut :</td></b>
             <td><input type="text" name="txtRut" value="<?php echo "$Rut" ?>" size="25" maxlength="30" ></td>
             <td><input type="submit" name="btnVer" value="Buscar" size="25" maxlength="30"></td>
-<br><br><br>
+<br>
 <table>
 		
         <tr>
@@ -163,14 +164,15 @@ echo "<script>alert('Actualizamos el registro correctamente')</script>";
         
 </table> 
 
-     <br><br>  	
+    	
         	
         	<center><input type="submit" name="btnActua" value="Actualizar" size="" maxlength=""></center>
-  			<br><br><br>
-            <button type="submit"><a href="menu.php">Volver</a></button>
+  			<br>
+			
+            <button  type="submit"><a href="menu.php">Volver</a></button>
+            
  
- 
-
+    </div>
 	
 		
 	

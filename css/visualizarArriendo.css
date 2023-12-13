@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
+*{
+  margin: 0;
+  padding:0;
+  -webkit-box-sizing: border-box; 
+}
+
+body{
+    background: #DCEAED;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:url('fondo6.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+   
+  }
+  .container {
+  
+    background:#E8F5E9;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100vh;
+    height: 90vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+      
+    }
+form{
+    text-transform: capitalize;
+    font-family:'Lato','Arial',sans-serif;
+    text-align: center;
+      }
+
+input{
+        margin-bottom: 15px;
+        border-radius: 30px;
+        border: 1px solid #DAE2F1;
+        padding: 15px 20px;
+        color:#004D40;
+        font-size: .9rem;
+        transition: .4s;
+        margin: 10px; 
+        padding: 15px;
+        color: #1a7e47;
+        width: 180px; 
+        height: 3px;
+        cursor: pointer;
+          &:last-child{
+          margin-bottom: 0;
+        }
+      
+      }
+
+      
+[type="submit"]{
+        
+        background:#33691E;
+        border-radius:30px;
+        padding: 20px ;
+        width: 150px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: .7rem;
+        font-family: 'Montserrat','Arial',sans-serif;
+        margin: 20;
+        text-align: center;
+        line-height: 2px; 
+          
+      }
+
+a{
+      text-decoration: none;
+        color: #fff;
+        
+      }
+button{  
+        outline:none;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+        font-family: inherit;
+        cursor: pointer;
+       } 
+.reloj {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    display: flex;
+    color:  #cbedd8;
+    background-color: #0b4524;
+    flex-direction: column;
+    height: 90px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px; 
+}
+.fecha {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  color:  #cbedd8;
+  background-color: #0b4524;
+  font-size: 18px;
+  margin-top: 60px;
+  margin-right: 100px;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  font-size: 15px;
+  z-index: 3;
+  position: absolute;
+
+}
+
+h1{
+        font-family:'Montserrat','Arial',sans-serif;
+        display: inline-block;
+        color: #0b4524;
+        font-size: 3rem;
+        margin: 10px;
+        padding:5px ; 
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 0px;
+        align-self: center;
+      }
+    
+h2{
+        display: inline-block;
+        color: #b8cac0;
+        font-size: .9rem;
+        margin: 10px;
+        
+      }
+ 
+td{
+    color: #1a7e47;
+    font-family:'Montserrat','Arial',sans-serif;;
+}
+     
+      
+    

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/visualizarArriendo.css">
+
 	<!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
 	var RelojID24 = null
@@ -45,14 +47,14 @@
 
 <body onload="IniciarReloj24()">
     <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
-        <input type="text" size="4" name="txtDigitos" style="background-color:04BDC0;
+        <input class="reloj" type="text" size="4" name="txtDigitos" style="background-color:04BDC0;
 		border-color:transparent; text-align:right" value="" disabled>
 
 		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
 	<?php date_default_timezone_set('America/Santiago');
             $vaFecha=date('d-M-Y');
         ?>
-        <input type="text" name="caja_fecha" size="7" style="background-color:04BDC0;
+        <input class="fecha" type="text" name="caja_fecha" size="7" style="background-color:04BDC0;
 		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
     </form>
 	
@@ -60,6 +62,7 @@
 
 <body bgcolor="04BDC0">
 	<center>
+	<div class="container">
     <h1><u>Todos los arriendos</u></h1>
 <form method="post">	
 <?php error_reporting (0); ?>  
@@ -95,10 +98,11 @@
 	echo "</table>";
 }
 ?>
-
+<br><br>
 		<td><button type="submit"><a href="menu.php">Volver</a></button></td>
 
 	</center>
+	<div>
 </form>
 
 </body>

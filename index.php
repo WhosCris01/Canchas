@@ -4,16 +4,70 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="css/index.css">
-    <title>Iniciar sesion</title>
+        <!-- INCORPORAR LA HORA A UN FORMULARIO -->
+	<script language="javascript">
+	var RelojID24 = null
+	var RelojEjecutandose24 = false
+	function DetenerReloj24 (){
+		if(RelojEjecutandose24)
+		clearTimeout(RelojID24)
+		RelojEjecutandose24 = false}
+	function MostrarHora24 () {
+		var ahora = new Date()
+		var horas = ahora.getHours()
+		var minutos = ahora.getMinutes()
+		var segundos = ahora.getSeconds()
+		var ValorHora
+	//establece las horas
+	if (horas < 10)
+		ValorHora = "0" + horas
+	else
+		ValorHora = "" + horas
+	//establece los minutos
+	if (minutos < 10)
+		ValorHora += ":0" + minutos
+	else
+		ValorHora += ":" + minutos
+	//establece los segundos
+	if (segundos < 10)
+		ValorHora += ":0" + segundos
+	else
+		ValorHora += ":" + segundos
+		document.reloj24.txtDigitos.value = ValorHora
+	//si se desea tener el reloj en la barra de estado, reemplazar la anterior por esta
+	//window.status = ValorHora
+		RelojID24 = setTimeout("MostrarHora24()",1000)
+		RelojEjecutandose24 = true
+	}
+	function IniciarReloj24 () {
+		DetenerReloj24()
+		MostrarHora24()
+	}
+	</script>
     </head>
 
-    <body>
-            <div class="container">
+    <body onload="IniciarReloj24()">
+    <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
+        <input type="text" size="6" name="txtDigitos" style="background-color:E7DE4D;
+		border-color:transparent; text-align:right" value="" disabled>
 
+		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
+	<?php date_default_timezone_set('America/Santiago');
+            $vaFecha=date('d-M-Y');
+        ?>
+        <input type="text" name="caja_fecha" size="10" style="background-color:E7DE4D;
+		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
+    </form>
+	
+</body>
+
+
+    <body bgcolor="E7DE4D">
+    <center>
         <form method="post">
         <?php error_reporting (0); ?>
-        <h1>INICIAR SESIÓN</h1>
+        <h1><FONT COLOR="white">INICIAR SESIÓN </FONT></h1>
+    <table><br><br><br>
     
         <tr>
             <td><b>Usuario :
@@ -29,8 +83,8 @@
     
     </table>
 <br><br>
-        <input type="submit" name="btnAcceder" value="Acceder">
-    
+        <input  type="submit" name="btnAcceder" value="Acceder">
+        </div>
 
     <?php 
     if($_POST['btnAcceder']=="Acceder"){

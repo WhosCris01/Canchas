@@ -6,15 +6,19 @@ if(! isset($_SESSION['Cargo'])){
     header("Location: index.php");
 }else{
     $_SESSION['Rut'] = $_SESSION['Rut'];
-    echo "El usuario conectado es: ".$_SESSION['Nombre']." ".$_SESSION['Apellido'];
+    echo "<h2>El usuario conectado es:".$_SESSION['Nombre']." ".$_SESSION['Apellido'];
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/agregarArriendo.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
     <title>agregarArriendo</title>
+  
 
     <!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
@@ -73,14 +77,14 @@ if(! isset($_SESSION['Cargo'])){
 
 <body onload="IniciarReloj24()">
     <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
-        <input type="text" size="4" name="txtDigitos" style="background-color:#EAF2F8;
+        <input class="reloj"  type="text" size="4" name="txtDigitos" style="background-color:#EAF2F8;
 		border-color:transparent; text-align:right" value="" disabled>
 
 		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
 	<?php date_default_timezone_set('America/Santiago');
             $vaFecha=date('d-M-Y');
         ?>
-        <input type="text" name="caja_fecha" size="7" style="background-color:#EAF2F8;
+        <input class="fecha" type="text" name="caja_fecha" size="7" style="background-color:#EAF2F8;
 		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
     </form>
 	
@@ -90,6 +94,8 @@ if(! isset($_SESSION['Cargo'])){
 <form method="post">	
 <?php error_reporting (0); ?>  
 	<center>
+    <div class="container">
+
 	<h1>Agregar Arriendo</h1>
 
 	<table>
@@ -120,11 +126,12 @@ if(! isset($_SESSION['Cargo'])){
 	</center>
         
      </table> 
-     <br><br>  	
+      	
         	
         	<center><input type="submit" name="btnAgre" value="AGREGAR" size="25" maxlength="30"></center>
-            <br><br>
-			<button type="submit"><a href="menu.php">Volver</a></button>
+            
+            <button type="submit"><a href="menu.php">Volver</a></button>
+</div>
 
  <?php 
 
