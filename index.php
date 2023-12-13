@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="css/index.css">
         <!-- INCORPORAR LA HORA A UN FORMULARIO -->
 	<script language="javascript">
 	var RelojID24 = null
@@ -44,21 +45,21 @@
 		MostrarHora24()
 	}
 	</script>
+    
     </head>
-
+   <div class="reloj">
     <body onload="IniciarReloj24()">
     <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
-        <input type="text" size="6" name="txtDigitos" style="background-color:E7DE4D;
-		border-color:transparent; text-align:right" value="" disabled>
+
+        <input class="reloj" type="text" size="6" name="txtDigitos"  value="" disabled>
 
 		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
 	<?php date_default_timezone_set('America/Santiago');
             $vaFecha=date('d-M-Y');
         ?>
-        <input type="text" name="caja_fecha" size="10" style="background-color:E7DE4D;
-		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
+        <input class="fecha" type="text" name="caja_fecha" size="10"  value="<?php echo $vaFecha; ?>" disabled>
     </form>
-	
+   </div>
 </body>
 
 
@@ -66,17 +67,15 @@
     <center>
         <form method="post">
         <?php error_reporting (0); ?>
-        <h1><FONT COLOR="white">INICIAR SESIÓN </FONT></h1>
-    <table><br><br><br>
-    
+    <div class="container">
+        <h1><FONT COLOR="white"><h1>INICIAR SESIÓN</h1> </FONT></h1>
+    <table>
         <tr>
-            <td><b>Usuario :
-            </td><td><input type="textRut" name="txtRut" value="" placeholder="ingrese su rut"></td>
+            <td><b>Usuario : <b></td><td><input type="textRut" name="txtRut" value="" placeholder="ingrese su rut"></td>
         </tr>
-        <br>
+        <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
         <tr>
-            <td><b>Clave : <b></td>
-            <td> <input type="password" name="txtContra" value="" maxlenght="15" placeholder="ingrese su contraseña"></td>
+            <td><b>Clave : <b></td><td> <input type="password" name="txtContra" value="" maxlenght="15" placeholder="ingrese su contraseña"></td>
         </tr>
        
 
