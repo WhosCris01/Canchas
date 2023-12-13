@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -24,16 +23,17 @@ body{
   }
 
   .container {
-    background: #E8F5E9;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px; 
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  
+  background:#E8F5E9;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+    
   }
 
 
@@ -46,7 +46,7 @@ a{
     
   }
   
-  /*FORM*/ 
+  /FORM/ 
   
   form{
     text-transform: capitalize;
@@ -66,7 +66,7 @@ a{
     margin: 10px; 
     padding: 15px;
     color: #1a7e47;
-    width: 10px; 
+    width: 120px; 
     height: 3px;
     cursor: pointer;
       &:last-child{
@@ -144,8 +144,5 @@ a{
   h2{
     display: inline-block;
     color: #1a7e47;
-    font-size: .9rem;
-  }
-
-  
-  
+    font-size: .9rem;
+  }
