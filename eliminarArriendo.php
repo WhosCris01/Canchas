@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/eliminarArriendo.css">
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Formulario</title>
@@ -49,14 +51,14 @@
 
 <body onload="IniciarReloj24()">
     <form name="reloj24"> <!-- Este form es otro aparte del que usamos para nuestro formulario -->
-        <input type="text" size="4" name="txtDigitos" style="background-color:04BDC0;
+        <input class="reloj" type="text" size="4" name="txtDigitos" style="background-color:04BDC0;
 		border-color:transparent; text-align:right" value="" disabled>
 
 		<!-- COLOCAR LA FECHA ACTUAL AL FORMULARIO -->
 	<?php date_default_timezone_set('America/Santiago');
             $vaFecha=date('d-M-Y');
         ?>
-        <input type="text" name="caja_fecha" size="7" style="background-color:04BDC0;
+        <input class="fecha" type="text" name="caja_fecha" size="7" style="background-color:04BDC0;
 		border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" disabled>
     </form>
 	
@@ -65,6 +67,7 @@
 <body bgcolor="04BDC0">
 <form method="post">	
 	<center>
+	<div class="container">
 	<h1>Eliminar Arriendo</h1>
     <?php error_reporting (0) ?> 
 <?php
@@ -116,10 +119,10 @@ if($_POST['btnVer']=="Buscar"){
 	</center>
         
      </table> 
-     <br><br>  	
-        	
+      	
+	 <br>	
         	<center><input type="submit" name="btnEliminar" value="Eliminar" size="25" maxlength="30"></center>
-  	        <br><br><br>
+  	        <br>
             <button type="submit"><a href="menu.php">Volver</a></button>
  <?php 
  
